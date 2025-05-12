@@ -1,3 +1,13 @@
+// Add event listener to get human choice
+const buttons = document.querySelectorAll("button");
+
+buttons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const humanChoice = button.id;
+    console.log(humanChoice);
+  });
+});
+
 function getComputerChoice() {
   // Get a random number between 0 to 3
   const randomNumber = Math.floor(Math.random() * 3);
