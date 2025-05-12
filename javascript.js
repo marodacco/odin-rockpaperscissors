@@ -16,26 +16,10 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  // Get a user input
-  return prompt("rock, paper or scissors");
-}
-
 function playGame() {
   // Create valuables to keep track of human/computer scores
   let humanScore = 0;
   let computerScore = 0;
-
-  // WHILE the number is under 5, the game continues
-  let n = 0;
-  while (n < 5 ) {
-    // Get the choices
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
-
-    playRound(humanSelection, computerSelection);
-    n++;
-  }
 
   // Compare the results and daclare the winner
   if (humanScore === computerScore) {
