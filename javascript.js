@@ -4,7 +4,8 @@ const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
   button.addEventListener("click", () => {
     const humanChoice = button.id;
-    console.log(humanChoice);
+
+  playRound(humanChoice, getComputerChoice());
   });
 });
 
@@ -26,7 +27,6 @@ function getComputerChoice() {
   }
 }
 
-function playGame() {
   // Create valuables to keep track of human/computer scores
   let humanScore = 0;
   let computerScore = 0;
@@ -40,10 +40,11 @@ function playGame() {
     console.log("Winner: Computer! You: " + humanScore + " vs Computer: " + computerScore);
   }
   
-  function playRound(humanChoice, computerChoice) {
-    // Make humanChoise case-insensitive
-    humanChoice = humanChoice.toLowerCase();
-  
+  function playRound(humanChoice, computerChoice) {  
+
+    console.log("You: " + humanChoice);
+    console.log("Computer: " + computerChoice);
+    
     // IF choices are the same, it's a tie
     if (humanChoice === computerChoice) {
       console.log("It's a tie!");
@@ -76,6 +77,3 @@ function playGame() {
       }
     }
   }
-}
-
-playGame();
