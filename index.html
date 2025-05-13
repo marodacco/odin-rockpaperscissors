@@ -6,19 +6,33 @@
   <title>Rock Paper Scissors</title>
 
   <style>
-    #buttons {
+    #buttons, #results {
       text-align: center;
+    }
+
+    #results p {
+      color: grey;
+    }
+
+    #results h2 {
+      color: red;
     }
   </style>
 
   <script src="javascript.js" defer></script>
 </head>
 <body>
+
   <div id="buttons">
     <h2>What's your choice?</h2>
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
+  </div>
+
+  <div id="results">
+    <h3>Score: 0 - 0</h3>
+    <p></p>
   </div>
   
 </body>
