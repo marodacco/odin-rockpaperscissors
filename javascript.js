@@ -78,20 +78,44 @@ function getComputerChoice() {
     current.textContent = text;
 
     // When one player reaches 5 points, dacrare the winner
+    const winner = document.createElement("h2");
+
     if (humanScore === 5 || computerScore === 5) {
       if (humanScore > computerScore) {
-        const winner = document.createElement("h2");
         winner.textContent = "YOU WIN!"
-        results.insertBefore(winner, score);
       } else {
-        const winner = document.createElement("h2");
         winner.textContent = "YOU LOSE!";
-        results.insertBefore(winner, score);
       }
+
+      results.insertBefore(winner, score);
 
       // Prevent the buttons from working
       buttons.forEach((button) => {
         button.disabled = true;
+      });
+
+      // Put Play Again button
+      const resetButton = document.createElement("button");
+      resetButton.innerText = "Play Again";
+      results.insertBefore(resetButton, score);
+
+      // Set button to playa again 
+      resetButton.addEventListener("click", () => {
+        // reset score and texts
+        humanScore = 0;
+        computerScore = 0;
+
+        score.textContent = "Score: 0 - 0";
+        current.textContent = "";
+
+        // Remove winner and resetButton
+        results.removeChild(winner);
+        results.removeChild(resetButton);
+
+        // Set the buttons active
+        buttons.forEach((button) => {
+          button.disabled = false;
+        });
       });
     }
   }
